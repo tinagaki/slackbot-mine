@@ -56,4 +56,4 @@ def recruit_talk_default(message):
 @listen_to('すべからく')
 def cool_func(message):
     #message.reply(':jp_subekaraku:')     # メンション
-    message.react('jp_subekaraku')     # リアクション
+    message.react('+1')     # リアクション
