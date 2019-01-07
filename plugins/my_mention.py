@@ -1,5 +1,6 @@
 from slackbot.bot import respond_to
 from slackbot.bot import default_reply  # 該当する応答がない場合に反応するデコーダ
+from slackbot.bot import listen_to
 #import slackbot_settings
 import urllib
 import json
@@ -12,8 +13,10 @@ import slackbot_settings
 
 @respond_to('こんにちは')
 @respond_to('今日は')
+@respond_to('今日は')
+@respond_to('こんにちわ')
 def hello(message):
-    message.reply('こんにちは!')
+    message.reply('すべからくこんにちは!')
 
 @default_reply()
 def docomo_talk_default(message):
@@ -48,3 +51,9 @@ def docomo_talk_default(message):
 def recruit_talk_default(message):
     none
 
+
+#@respond_to('すべからく')
+@listen_to('すべからく')
+def cool_func(message):
+    #message.reply(':jp_subekaraku:')     # メンション
+    message.react('jp_subekaraku')     # リアクション
